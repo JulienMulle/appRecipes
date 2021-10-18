@@ -17,7 +17,7 @@ export const useFetchRecipes = () => {
             number: MAX_RESULT
             }
         })
-        console.log("response", response.data.results)
+        
         dispatch(addRecipes(response.data.results))
         } catch(e) {
             console.error("Hello darkness, my old friends, erreur dans getAllRecipes", e)
