@@ -5,7 +5,7 @@ const initialState ={
     selectedRecipes: {}
 }
 
-export const recipes = (state, action) => {
+export const recipes = (state = initialState, action) => {
     switch(action.type){
         case ADD_RECIPES:
             return{
