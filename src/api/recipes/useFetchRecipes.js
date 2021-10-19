@@ -8,7 +8,7 @@ const API_KEY = "c0ef4429bd084f21b5f1c36dbe2eb701";
 //const {REACT_APP_KEY} = process.env
 const MAX_RESULT = 15
 
-export const useFetchRecipes = (id) => {
+export const useFetchRecipes = () => {
     const dispatch = useDispatch()
 
     // requete pour acceder à toutes les recettes
@@ -28,7 +28,7 @@ export const useFetchRecipes = (id) => {
     }
 
     //requete pour acceder aux details des recettes
-    const getRecipesById = async() => {
+    const getRecipesById = async(id) => {
         try {
             const response = await axios.get(`${URL_API}/${id}/information`, {
                 params:{
