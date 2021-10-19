@@ -17,13 +17,13 @@ export const useFetchRecipes = () => {
         const response = await axios.get(`${URL_API}/complexSearch`, {
             params:{
                 apiKey: API_KEY,
-            number: MAX_RESULT
+                number: MAX_RESULT
             }
         })
         
-        dispatch(addRecipes(response.data))
+        dispatch(addRecipes(response.data.results))
         } catch(e) {
-                 
+                 console.error("erreur dans getAllRecipes", e)
         }
     }
 
@@ -33,12 +33,11 @@ export const useFetchRecipes = () => {
             const response = await axios.get(`${URL_API}/${id}/information`, {
                 params:{
                     apiKey: API_KEY,
-                number: MAX_RESULT
                 }
             })
         dispatch(selectRecipes(response.data))
         } catch(e) {
-            console.error()
+            console.error("erreur dans selectRecipes", e)
         }
     }
 

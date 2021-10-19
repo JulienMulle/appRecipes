@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { FlatList, Text } from 'react-native';
+import { FlatList } from 'react-native';
 
 import { useSelector } from 'react-redux';
 import { useFetchRecipes } from '../../api/recipes/useFetchRecipes';

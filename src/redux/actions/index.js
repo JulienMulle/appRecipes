@@ -8,7 +8,7 @@ export const addRecipes = (data) => ({
     }
 });
 
-export const selectRecipes = (data) => ({
+export const selectRecipe = (data) => ({
     type: SELECTED_RECIPES,
     payload:{
         data
