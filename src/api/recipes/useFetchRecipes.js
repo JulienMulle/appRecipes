@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useDispatch } from "react-redux";
-import { addRecipes } from "../../redux/actions";
+import { addRecipes, selectRecipes } from "../../redux/actions";
 
 
 const URL_API = "https://api.spoonacular.com/recipes";
@@ -21,7 +21,7 @@ export const useFetchRecipes = () => {
             }
         })
         
-        dispatch(addRecipes(response.data.results))
+        dispatch(addRecipes(response.data))
         } catch(e) {
                  
         }
@@ -36,6 +36,7 @@ export const useFetchRecipes = () => {
                 number: MAX_RESULT
                 }
             })
+        dispatch(selectRecipes(response.data))
         } catch(e) {
             console.error()
         }
