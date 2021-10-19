@@ -6,7 +6,7 @@ import { useFetchRecipes } from '../../api/recipes/useFetchRecipes';
 import { getRecipesList } from '../../redux/selectors';
 import RecipeTile from './RecipeTile';
 
-export default function RecipesList() {
+export default function RecipesList({ navigation }) {
     const { getAllRecipes } = useFetchRecipes()
     const allRecipes = useSelector(getRecipesList)
     
@@ -18,7 +18,7 @@ export default function RecipesList() {
     }, [])
     
     //alone function
-    const renderItem = ({item}) => <RecipeTile item={item} />
+    const renderItem = ({item}) => <RecipeTile navigation={navigation} item={item} />
     
 
     return (

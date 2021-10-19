@@ -1,14 +1,20 @@
 import React from 'react'
-import { Image, View, StyleSheet, Text } from 'react-native'
+import { Image, View, StyleSheet, Text, Pressable } from 'react-native'
 
-export default function RecipeTile({item}) {
+export default function RecipeTile({item, navigation}) {
     return (
-        <View style={styles.container}>
+        /* grace à pressable et onPress, je pourrais acceder à la page RecipesDetails en appuyant sur une recette */
+        <Pressable 
+        
+            onPress={() =>{
+                navigation.navigate("RecipesDetails")
+            }}
+            style={styles.container}>
             <Image source={{uri: item.image}}  style={styles.image}/>
             <View style={styles.subcontainer}>
             <Text style={styles.title}> {item.title}</Text>
             </View>
-        </View>
+        </Pressable>
     )
 }
 
