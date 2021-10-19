@@ -1,23 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import RecipesList from './src/screen/RecipesList';
 
 import { Provider } from 'react-redux';
 import { store } from './src/redux/store';
 
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
     <Provider store={store}>
-    <View >
-      <RecipesList />
-      
       <StatusBar style="auto" />
-    </View>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="RecipesList" component={RecipesList} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </Provider>
   );
 }
 
-const styles = StyleSheet.create({
-  
-});
+
+
+//avec l'utilisation de NavigationContainer, nous n'avons plus besoin de View ou de safetyView.

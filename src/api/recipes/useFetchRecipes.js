@@ -5,7 +5,7 @@ import { addRecipes } from "../../redux/actions";
 const URL_API = "https://api.spoonacular.com/recipes/complexSearch";
 const API_KEY = "c0ef4429bd084f21b5f1c36dbe2eb701";
 //const {REACT_APP_KEY} = process.env
-const MAX_RESULT = 5
+const MAX_RESULT = 15
 
 export const useFetchRecipes = () => {
     const dispatch = useDispatch()
@@ -21,7 +21,7 @@ export const useFetchRecipes = () => {
         
         dispatch(addRecipes(response.data.results))
         } catch(e) {
-            console.error("Hello darkness, my old friends, erreur dans getAllRecipes", e)
+            
             
         }
     }

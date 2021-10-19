@@ -22,13 +22,10 @@ export default function RecipesList() {
     
 
     return (
-        <>
-            <Text>RecipesList</Text>
             <FlatList
                 data={allRecipes}
                 keyExtractor={(item, index) =>index.toString()}
                 renderItem={renderItem}
             />
-        </>
     )
 }
