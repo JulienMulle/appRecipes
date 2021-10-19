@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import RecipesList from './src/screen/RecipesList';
+import RecipesDetails from './src/screen/RecipesDetails';
 
 import { Provider } from 'react-redux';
 import { store } from './src/redux/store';
@@ -17,6 +18,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="RecipesList" component={RecipesList} />
+          <Stack.Screen name="RecipesDetails" component={RecipesDetails} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
