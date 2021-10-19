@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { FlatList } from 'react-native';
+import { ActivityIndicator, FlatList, View } from 'react-native';
 
 import { useSelector } from 'react-redux';
 import { useFetchRecipes } from '../../api/recipes/useFetchRecipes';
@@ -32,6 +32,7 @@ export default function RecipesList({ navigation }) {
                 keyExtractor={(item, index) =>index.toString()}
                 renderItem={renderItem}
                 onEndReached={onEndReached}
+                ListFooterComponent={() => <View style={{padding:30}}><ActivityIndicator /></View>}
             />
     )
 }
