@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useDispatch } from "react-redux";
-import { addRecipes, selectRecipes } from "../../redux/actions";
+import { addRecipes, selectRecipe } from "../../redux/actions";
 
 
 const URL_API = "https://api.spoonacular.com/recipes";
@@ -35,7 +35,7 @@ export const useFetchRecipes = () => {
                     apiKey: API_KEY,
                 }
             })
-        dispatch(selectRecipes(response.data))
+        dispatch(selectRecipe(response.data))
         } catch(e) {
             console.error("erreur dans selectRecipes", e)
         }

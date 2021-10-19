@@ -1,4 +1,4 @@
-import { ADD_RECIPES, SELECTED_RECIPES } from "./actionsType";
+import { ADD_RECIPES, SELECTED_RECIPE } from "./actionsType";
 
 
 export const addRecipes = (data) => ({
@@ -9,7 +9,7 @@ export const addRecipes = (data) => ({
 });
 
 export const selectRecipe = (data) => ({
-    type: SELECTED_RECIPES,
+    type: SELECTED_RECIPE,
     payload:{
         data
     }
