@@ -1,16 +1,21 @@
-import { ADD_RECIPES } from "../actions/actionsType";
+import { ADD_RECIPES, SELECTED_RECIPES } from "../actions/actionsType";
 
 const initialState ={
     list: [],
-    //selectedRecipes: {}
+    selectedRecipes: {}
 }
 
 export const recipes = (state = initialState, action) => {
     switch(action.type){
         case ADD_RECIPES:
             return{
-                //selectedRecipes : state.selectedRecipes,
-                list: [...state.list, ...action.payload.data]
+                list: [...state.list, ...action.payload.data],
+                selectedRecipes: state.selectedRecipes,
+            }
+        case SELECTED_RECIPES:
+            return{
+                list: state.list,
+                selectedRecipes: action.payload.data
             }
         default:
             return state
