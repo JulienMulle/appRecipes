@@ -1,5 +1,5 @@
 import React, { useEffect} from 'react'
-import { Pressable, Text } from 'react-native'
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { useSelector } from 'react-redux';
 
 import { useFetchRecipes } from '../../api/recipes/useFetchRecipes';
@@ -16,14 +16,59 @@ export default function RecipesDetails({ route, navigation }) {
         getRecipesById(id)
     }, []);
 
+    if (!recipe) {
+        return <View />
+    }
+
     return (
-        <>
-            <Text>{id}</Text>
-            <Text>{recipe.title}</Text>
+        <ScrollView>
+            
+            <Image source={{uri: recipe.image}} style={styles.image}/>
+            <Text style={styles.title}>{recipe.title}</Text>
+            <Text style={styles.caption}> Ready in {recipe.readyInMinutes}min</Text>
+            <View style={styles.containerIng}>
+                    <Text style={styles.titleIng}>Ingredients </Text>
+                {/*je recherche une partie des données contenue dans extendIngredient */}
+                { recipe.extendedIngredients?.map(ing =>(
+                    <Text>{ing.name}</Text>    
+                ))}
+            </View>
             <Pressable
             onPress={()=>{navigation.goBack()}}>
                 <Text>Retour</Text>
             </Pressable>
-        </>
+        </ScrollView>
     )
 }
+
+const styles = StyleSheet.create({
+    image: {
+        width: "100%",
+        height: 200,
+        marginBottom: 10,
+    },
+    title: {
+        fontSize: 20,
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+    
+    caption:{
+        textAlign: "center"
+    },
+    titleIng:{
+        fontWeight: "bold",
+        fontSize: 16,
+        marginBottom: 5
+    },
+    containerIng:{
+        padding: 5,
+        marginHorizontal: 16,
+        marginVertical: 10,
+        borderTopColor: "black",
+        borderTopWidth: 1,
+        borderBottomColor: "black",
+        borderBottomWidth: 1,
+
+    }
+})
