@@ -6,18 +6,19 @@ import { addRecipes, selectRecipe } from "../../redux/actions";
 const URL_API = "https://api.spoonacular.com/recipes";
 const API_KEY = "c0ef4429bd084f21b5f1c36dbe2eb701";
 //const {REACT_APP_KEY} = process.env
-const MAX_RESULT = 15
+const MAX_RESULT = 30
 
 export const useFetchRecipes = () => {
     const dispatch = useDispatch()
 
     // requete pour acceder à toutes les recettes
-    const getAllRecipes = async() => {
+    const getAllRecipes = async(page) => {
         try {
         const response = await axios.get(`${URL_API}/complexSearch`, {
             params:{
                 apiKey: API_KEY,
-                number: MAX_RESULT
+                number: MAX_RESULT,
+                offset: page * MAX_RESULT
             }
         })
         
