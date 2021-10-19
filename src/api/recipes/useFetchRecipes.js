@@ -43,6 +43,7 @@ export const useFetchRecipes = () => {
     }
 
     return { 
-        getAllRecipes
+        getAllRecipes,
+        getRecipesById
     }
 }
