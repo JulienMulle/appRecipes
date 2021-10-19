@@ -5,9 +5,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import RecipesList from './src/screen/RecipesList';
 import RecipesDetails from './src/screen/RecipesDetails';
+import TaskScreen from './src/screen/tasks';
 
 import { Provider } from 'react-redux';
 import { store } from './src/redux/store';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +19,7 @@ export default function App() {
       <StatusBar style="auto" />
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen name="TaskList" component={TaskScreen} />
           <Stack.Screen name="RecipesList" component={RecipesList} />
           <Stack.Screen name="RecipesDetails" component={RecipesDetails} />
         </Stack.Navigator>
