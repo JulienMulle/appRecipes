@@ -15,7 +15,7 @@ export default function AppNavigation() {
 
     return (
         <NavigationContainer>
-          <Tabs.Navigator>
+          <Tabs.Navigator screenOptions={{headerShown: false}}>
             <Tabs.Screen name="Recettes" component={RecipesList} />
             <Tabs.Screen name="Liste" component={TaskScreen} />
           </Tabs.Navigator>

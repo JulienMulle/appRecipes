@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { ActivityIndicator, FlatList, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { useSelector } from 'react-redux';
 import { useFetchRecipes } from '../../api/recipes/useFetchRecipes';
@@ -27,6 +28,7 @@ export default function RecipesList({ navigation }) {
     
 
     return (
+        <SafeAreaView>
             <FlatList
                 data={allRecipes}
                 keyExtractor={(item, index) =>index.toString()}
@@ -34,5 +36,6 @@ export default function RecipesList({ navigation }) {
                 onEndReached={onEndReached}
                 ListFooterComponent={() => <View style={{padding:30}}><ActivityIndicator /></View>}
             />
+        </SafeAreaView>
     )
 }

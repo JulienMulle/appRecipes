@@ -9,6 +9,7 @@ import Counter from '../../components/Counter';
 import Header from '../../components/Header';
 import TaskForm from './TaskForm';
 import TaskTile from './TaskTile';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 export default function TaskScreen() {
@@ -30,7 +31,7 @@ export default function TaskScreen() {
     };
 
     return ( 
-        <>
+        <SafeAreaView>
             <FlatList 
             //scroll infini avec chargement des données
             //onEndReached={()=> loadData}
@@ -53,7 +54,7 @@ export default function TaskScreen() {
             />
             <TaskForm />
             
-        </>
+        </SafeAreaView>
     )
 }
 
