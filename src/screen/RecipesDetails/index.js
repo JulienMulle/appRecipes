@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { useFetchRecipes } from '../../api/recipes/useFetchRecipes';
 import { getSelectedRecipe } from '../../redux/selectors'
+import Ingredient from './Ingredient';
 
 export default function RecipesDetails({ route, navigation }) {
     const {id} = route.params;
@@ -30,7 +31,7 @@ export default function RecipesDetails({ route, navigation }) {
                     <Text style={styles.titleIng}>Ingredients </Text>
                 {/*je recherche une partie des données contenue dans extendIngredient */}
                 { recipe.extendedIngredients?.map(ing =>(
-                    <Text>{ing.name}</Text>    
+                    <Ingredient ing={ing}/>   
                 ))}
             </View>
             <Pressable
