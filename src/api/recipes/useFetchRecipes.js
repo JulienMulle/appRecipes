@@ -1,11 +1,11 @@
 import axios from "axios"
 import { useDispatch } from "react-redux";
 import { addRecipes, selectRecipe } from "../../redux/actions";
-
+import { REACT_APP_KEY } from "@env"
 
 const URL_API = "https://api.spoonacular.com/recipes";
-const API_KEY = "c0ef4429bd084f21b5f1c36dbe2eb701";
-//const {REACT_APP_KEY} = process.env
+const API_KEY = REACT_APP_KEY;
+
 const MAX_RESULT = 30
 
 export const useFetchRecipes = () => {
