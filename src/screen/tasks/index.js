@@ -31,7 +31,7 @@ export default function TaskScreen() {
     };
 
     return ( 
-        <SafeAreaView>
+        <SafeAreaView style={{flex:1}}>
             <FlatList 
             //scroll infini avec chargement des données
             //onEndReached={()=> loadData}
