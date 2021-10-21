@@ -1,6 +1,7 @@
 //recipes
 export const getRecipesList = store => store.recipes.list;
 export const getSelectedRecipe = store => store.recipes.selectedRecipe
+export const getRecipeInstructions = store => store.recipes.recipeInstruction
 
 //tasks
 //Selectors: sélectionner une partie de notre store
