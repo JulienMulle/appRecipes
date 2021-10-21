@@ -1,4 +1,4 @@
-import { ADD_RECIPES, SELECTED_RECIPE, ADD_TASK, TOGGLE_TASK, DELETE_TASK } from "./actionsType";
+import { ADD_RECIPES, SELECTED_RECIPE, RECIPE_INSTRUCTION, ADD_TASK, TOGGLE_TASK, DELETE_TASK } from "./actionsType";
 
 
 //Actions: fonctions qui renvoient un objet aux reducers - {type: MON_ACTION, payload : {DATA}}
@@ -11,6 +11,13 @@ export const addRecipes = (data) => ({
 
 export const selectRecipe = (data) => ({
     type: SELECTED_RECIPE,
+    payload:{
+        data
+    }
+})
+
+export const recipeInstruction = (data) => ({
+    type: RECIPE_INSTRUCTION,
     payload:{
         data
     }

@@ -1,5 +1,6 @@
 export const ADD_RECIPES = "ADD_RECIPES";
 export const SELECTED_RECIPE = "SELECTED_RECIPE";
+export const RECIPE_INSTRUCTION = "RECIPE_INSTRUCTION";
 
 //action ajout d'une tache
 // stockant mon string dans une const, je reduis le nombre d'erreur
