@@ -6,13 +6,13 @@ import { addTask } from '../../redux/actions';
 export default function Ingredient({ing}) {
     const dispatch = useDispatch();
     const onAddIngredient = () => {
-        dispatch(addTask(`Ingrédient: ${ing.name}`))
+        dispatch(addTask(`Ingredient: ${ing.name}`))
     }
     return (
         <View style={styles.container}>
-            <Text style={styles.name}>{ing.name}</Text>
-            <TouchableOpacity style={styles.btn} onPress={onAddIngredient() }>
-                <Text>Ajouter</Text>
+            <Text  style={styles.name}>{ing.name}</Text>
+            <TouchableOpacity style={styles.btn} onPress={onAddIngredient}>
+                <Text >Ajouter</Text>
             </TouchableOpacity>
         </View>
     )

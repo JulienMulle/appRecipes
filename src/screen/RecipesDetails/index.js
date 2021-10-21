@@ -31,7 +31,7 @@ export default function RecipesDetails({ route, navigation }) {
                     <Text style={styles.titleIng}>Ingredients </Text>
                 {/*je recherche une partie des données contenue dans extendIngredient */}
                 { recipe.extendedIngredients?.map(ing =>(
-                    <Ingredient ing={ing}/>   
+                    <Ingredient key={ing.id} ing={ing}/>   
                 ))}
             </View>
             <Pressable
